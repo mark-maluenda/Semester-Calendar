@@ -25,19 +25,8 @@ public class Day {
         this.courses.add(course);
     }
 
-    /** Finds Course in Day, Returns Course */
-    public Course findCourse( String courseID ) {
-        for ( Course course : courses ) {
-            if ( course.getCourseID().equals(courseID) ) {
-                return course;
-            }
-        }
-        return null;
-    }
-
     /** Removes course from Day */
-    public void removeCourse( String courseID ) {
-        Course course = findCourse(courseID);
+    public void removeCourse( Course course ) {
         courses.remove(course);
     }
 }

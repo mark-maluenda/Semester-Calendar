@@ -4,12 +4,12 @@ public class Course {
     public String courseID;
 
     /** Days of Sessions */
-    public int[] sessionDays;
+    public Days[] sessionDays;
 
     /** Constructor --> Course */
-    public Course( String courseID, int[] sessionDays ) {
+    public Course( String courseID, Days[] sessionDays ) {
         this.courseID = courseID;
-        this.sessionDays = new int[sessionDays.length];
+        this.sessionDays = new Days[sessionDays.length];
         for ( int i = 0 ; i < sessionDays.length ; i++ ) {
             this.sessionDays[i] = sessionDays[i];
         }
@@ -18,5 +18,17 @@ public class Course {
     /** Getter --> courseID */
     public String getCourseID() {
         return courseID;
+    }
+
+    /** toString */
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append( courseID + "[");
+        for ( int i = 0 ; i < sessionDays.length ; i++ ) {
+            string.append(" " + sessionDays[i]);
+        }
+        string.append("]");
+        return string.toString();
     }
 }
