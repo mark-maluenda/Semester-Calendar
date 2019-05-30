@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+
 /** Course that is unique to other courses */
 public class Course {
     /** Course ID */
     public String courseID;
 
     /** Days of Sessions */
-    public Days[] sessionDays;
+    public int[] sessionDays;
 
     /** Constructor --> Course */
-    public Course( String courseID, Days[] sessionDays ) {
+    public Course( String courseID, int[] sessionDays ) {
         this.courseID = courseID;
-        this.sessionDays = new Days[sessionDays.length];
+        this.sessionDays = new int[sessionDays.length];
         for ( int i = 0 ; i < sessionDays.length ; i++ ) {
             this.sessionDays[i] = sessionDays[i];
         }
@@ -24,11 +26,30 @@ public class Course {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
-        string.append( courseID + "[");
+        string.append("COURSE { courseID="+ courseID + " sessionDays=[");
         for ( int i = 0 ; i < sessionDays.length ; i++ ) {
-            string.append(" " + sessionDays[i]);
+            if ( sessionDays[i] == 0 ) {
+                string.append("SUN");
+            } else if ( sessionDays[i] == 1 ) {
+                string.append("MON");
+            } else if ( sessionDays[i] == 2 ) {
+                string.append("TUES");
+            } else if ( sessionDays[i] == 3 ) {
+                string.append("WED");
+            } else if ( sessionDays[i] == 4 ) {
+                string.append("THURS");
+            } else if ( sessionDays[i] == 5 ) {
+                string.append("FRI");
+            } else if ( sessionDays[i] == 6 ) {
+                string.append("SAT");
+            }
+            if ( i < sessionDays.length - 1) {
+                string.append(", ");
+            } else {
+                string.append("]");
+            }
         }
-        string.append("]");
+        string.append(" }");
         return string.toString();
     }
 }
