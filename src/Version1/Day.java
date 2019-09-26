@@ -1,22 +1,22 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+package Version1;
 
-/** Represents a Single Day of the Calendar */
+import java.util.ArrayList;
+
+/** Represents a Single Version1.Day of the SemesterCalendar */
 public class Day {
-    /** Day Number */
+    /** Version1.Day Number */
     public int dayNum;
 
-    /** Day Name */
+    /** Version1.Day Name */
     public String dayName;
 
     /** Week Number */
     public int weekNum;
 
-    /** Courses on this Day */
+    /** Courses on this Version1.Day */
     private ArrayList<Course> courses;
 
-    /** Constructor --> Day */
+    /** Constructor --> Version1.Day */
     public Day( int dayNum, int weekNum ) {
         this.dayNum = dayNum;
         switch ( this.dayNum ) {
@@ -46,12 +46,12 @@ public class Day {
         this.courses = new ArrayList<>();
     }
 
-    /** Adds course into Day */
+    /** Adds course into Version1.Day */
     public void addCourse( Course course ) {
         this.courses.add(course);
     }
 
-    /** Removes course from Day */
+    /** Removes course from Version1.Day */
     public void removeCourse( Course course ) {
         courses.remove(course);
     }

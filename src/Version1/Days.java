@@ -1,3 +1,5 @@
+package Version1;
+
 public interface Days {
     public final static int SUN = 0;
     public final static int MON = 1;

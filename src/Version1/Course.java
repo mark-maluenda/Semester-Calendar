@@ -1,14 +1,16 @@
+package Version1;
+
 import java.util.ArrayList;
 
-/** Course that is unique to other courses */
+/** Version1.Course that is unique to other courses */
 public class Course {
-    /** Course ID */
+    /** Version1.Course ID */
     public String courseID;
 
-    /** Days of Sessions */
+    /** Version1.Days of Sessions */
     public int[] sessionDays;
 
-    /** Constructor --> Course */
+    /** Constructor --> Version1.Course */
     public Course( String courseID, int[] sessionDays ) {
         this.courseID = courseID;
         this.sessionDays = new int[sessionDays.length];

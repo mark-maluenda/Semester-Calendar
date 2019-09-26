@@ -1,22 +1,24 @@
+package Version1;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/** Calendar Class */
+/** SemesterCalendar Class */
 public class SemesterCalendar implements Days {
     /** Weeks */
     public final static int WEEKS = 16;
 
-    /** Days */
+    /** Version1.Days */
     public final static int DAYS = 7;
 
-    /** Calendar Array */
+    /** SemesterCalendar Array */
     public Day[][] calendar;
 
     /** List of Courses in the Semester */
     public List<Course> courses;
 
-    /** Constructor --> Calendar */
+    /** Constructor --> SemesterCalendar */
     public SemesterCalendar() {
         this.calendar = new Day[DAYS][WEEKS];
         this.courses = new ArrayList<>();
@@ -27,12 +29,12 @@ public class SemesterCalendar implements Days {
         }
     }
 
-    /** Getter --> Day at Given Day and Week */
+    /** Getter --> Version1.Day at Given Version1.Day and Week */
     public Day getDay( int day, int week ) {
         return calendar[day][week];
     }
 
-    /** Getter --> Days Per Week */
+    /** Getter --> Version1.Days Per Week */
     public int getDays() {
         return DAYS;
     }
@@ -42,7 +44,7 @@ public class SemesterCalendar implements Days {
         return WEEKS;
     }
 
-    /** Gets Index Value for Given Day */
+    /** Gets Index Value for Given Version1.Day */
     public int getDayIndex( String dayName ) {
         switch ( dayName ) {
             case "SUN":
@@ -64,12 +66,12 @@ public class SemesterCalendar implements Days {
         }
     }
 
-    /** Creates a Course, Adding it into List */
+    /** Creates a Version1.Course, Adding it into List */
     public void createCourse() {
         Scanner reader = new Scanner(System.in); // <--TEMPORARY
-        System.out.println("Enter Course ID: ");
+        System.out.println("Enter Version1.Course ID: ");
         String courseID = reader.nextLine().strip();
-        System.out.println("Enter Days Course is in Session: ");
+        System.out.println("Enter Version1.Days Version1.Course is in Session: ");
         String[] sessionDaysSTRING = reader.nextLine().toUpperCase().strip().split(" ");
         int[] sessionDaysINDEX = new int[sessionDaysSTRING.length];
         for ( int i = 0 ; i < sessionDaysSTRING.length ; i++ ) {
@@ -78,12 +80,12 @@ public class SemesterCalendar implements Days {
         courses.add(new Course(courseID, sessionDaysINDEX));
     }
 
-    /** Adds Course into Calendar */
+    /** Adds Version1.Course into SemesterCalendar */
     public void addOneCourse( Course course, int day, int week ) {
         calendar[day][week].addCourse(course);
     }
 
-    /** Removes Course from Calendar */
+    /** Removes Version1.Course from SemesterCalendar */
     public void removeOneCourse( Course course, int day, int week ) {
         calendar[day][week].removeCourse(course);
     }
